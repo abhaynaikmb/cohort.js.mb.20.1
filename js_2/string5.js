@@ -8,7 +8,7 @@ function string5(arr){
     while(len){
         str=str.replace(',', ' ');
         len--;}
-        console.log(str);
+        return str;
 }
 
 
