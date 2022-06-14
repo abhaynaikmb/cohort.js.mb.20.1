@@ -1,11 +1,10 @@
 function maps(elements, cb) {
-  let arr = [];
- 
+    let arr=[];
     for ( let items of elements ){
-      cb(items,arr);
+      arr.push(cb(items));
     }
-   
-
     return arr;
   }
 module.exports=maps;
+
+

@@ -1,14 +1,15 @@
 
 
 
- function reduces(elements,cb) {
+ function reduces(elements,cb,valueBegin) {
    
-   let se =  0;
+   let se = valueBegin || 0;
    const first = elements[se];
    let reduced = first;
    for ( let i = se+1; i < elements.length; ++i ) {
      reduced = cb(reduced, elements[i] )
    }
+  
    return reduced;
  }
 
