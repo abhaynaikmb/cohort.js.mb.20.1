@@ -1,7 +1,7 @@
 
 
 
- function reduces(elements) {
+ function reduces(elements,cb) {
    
    let se =  0;
    const first = elements[se];
