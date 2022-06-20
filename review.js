@@ -77,16 +77,5 @@ console.log(sortedCities)
 
 
 
-// console.log(arr)
-// let str="";
-// function toTitleCase(str){
-// str = str.toLowerCase().replace(/_/g, " ");
-// const str2 = str.split(" ");
-// for (let i = 0; i < str2.length; i++) {
-//     str2[i] = str2[i][0].toUpperCase() + str2[i].substr(1);
-// }
-//  str=str2.join(' ');
-//  return str;
-// }
-// newarr= [arr.map((x)=>(toTitleCase(x[0])))];
+
 

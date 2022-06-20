@@ -4,7 +4,7 @@ const userDetailsArray = [
         "id": "600dc3b5d617e547a0e74cb9",
         "name": "Mitchell Fitzgerald",
         "about": "Proident voluptate veniam voluptate mollit reprehenderit anim officia et ea ex laboris nulla laboris. Nulla ut aliquip fugiat tempor veniam sint aliqua reprehenderit tempor Lorem commodo anim.",
-        "address": "48 Flatlands Avenue, Cutter, North Dakota",
+        
         address: {
             streetAddress: '48 Flatlands Avenue',
             neighbour: 'Cutter',
@@ -38,11 +38,11 @@ const userDetailsArray = [
 //             city: 'Florida'
 // }]
 
-userDetailsArray.reduce((idAdressArray,x) => {
-    // console.log(x.address);
- 
- },0)
-
+let adressArr=userDetailsArray.reduce((adressArray,x) => {
+   adressArray.push(x.address);
+ return adressArray;
+ },[])
+console.log(adressArr)
 ////////////////////////////////////////////////////////
 
 
@@ -70,10 +70,11 @@ userDetailsArray.reduce((idAdressArray,x) => {
 
 
 
- userDetailsArray.reduce((idAdressArray,x) => {
-   // console.log(x.id,x.address)
-
-},0)
+ let idAdress =userDetailsArray.reduce((idAdressArray,x) => {
+   idAdressArray[x.id]= x.address;
+  return idAdressArray;
+},{})
+console.log(idAdress)
 
 
 ////////////////////////////////////////////////////////
@@ -106,10 +107,11 @@ userDetailsArray.reduce((idAdressArray,x) => {
 //         "company": "Fleetmix"
 //     }
 // }
-userDetailsArray.reduce((idAdressArray,x) => {
-  //console.log({"id" : x.id, "about" : x.about, "name" : x.name, "adress" :x.address,"company":x.company})
-
-},0)
+let idNameABoutAdress=userDetailsArray.reduce((idNAA,x) => {
+ idNAA[x.id]={ "about" : x.about, "name" : x.name, "adress" :x.address,"company":x.company};
+return idNAA
+},{})
+console.log(idNameABoutAdress)
 
 
 ////////////////////////////////////////////////////////
@@ -124,15 +126,14 @@ userDetailsArray.reduce((idAdressArray,x) => {
 //       }
 // }
 
-userDetailsArray.reduce((idAdressArray,x) => {
-//    if(x.address.city=='North Dakota')
-//     { 
-//    // console.log( {  x: { "information":[x.name , x.address.city , x.company] }});}
-
- 
-},0) 
-
-
+let filterND=userDetailsArray.reduce((nortDakota,x) => {
+   if(x.address.city=='North Dakota') 
+     { 
+         nortDakota={ [x.id] : { "information":[x.name , x.address.city , x.company] }};
+     }
+return nortDakota;
+},{})
+console.log(filterND);
 ////////////////////////////////////////////////////////
 
 
@@ -140,12 +141,14 @@ userDetailsArray.reduce((idAdressArray,x) => {
  // Q5. Filter out the person who lives in city "North Dakota" and transform the result to the following structure. 
 // Response: 
 // [{id: 600dc3b5d617e547a0e74cb9, name: Mitchell Fitzgerald"}, "North Dakota", "Scenty"]
-userDetailsArray.reduce((idAdressArray,x) => {
-    //if(x.address.city=='North Dakota'){ let a = x.id;
-    // console.log( [{  "id": x.id, "name" : x.name }, x.address.city , x.company]);}
+let nD=userDetailsArray.reduce((nDF,x) => {
+  if(x.address.city=='North Dakota'){ 
+ nDF=[{  "id": x.id, "name" : x.name }, x.address.city , x.company];
+}
 
- 
- },0)
+ return nDF;
+ },[])
+ console.log(nD);
 
 
 ////////////////////////////////////////////////////////
@@ -157,12 +160,13 @@ userDetailsArray.reduce((idAdressArray,x) => {
 // Response: 
 // [{id: 600dc3b5d617e547a0e74cb9, name: Mitchell Fitzgerald"}, { city: "North Dakota" }, { company: "Scenty" }]
 
-userDetailsArray.reduce((idAdressArray,x) => {
-    // if(x.address.city=='North Dakota'){ 
-    // console.log( [{  "id": x.id, "name" : x.name }, {"city" : x.address.city} , {"company" : x.company}]);}
-
+let nd6=userDetailsArray.reduce((nDS,x) => {
+    if(x.address.city=='North Dakota'){ 
+   nDS = [{  "id": x.id, "name" : x.name }, {"city" : x.address.city} , {"company" : x.company}];}
+return nDS;
  
- },0)
+ },[])
+ console.log(nd6)
 
 
 ////////////////////////////////////////////////////////
@@ -174,8 +178,9 @@ userDetailsArray.reduce((idAdressArray,x) => {
 //     [{id: 600dc3b5d617e547a0e74cb9, name: Mitchell Fitzgerald"}, { city: "North Dakota" }, { company: "Scenty" }],
 //     [{id: 600dc3b5c4e60ba2ebf06569, name: Howell Faulkner"}, { city: "Florida" }, { company: "Fleetmix" }]
 // ]
-userDetailsArray.reduce((idAdressArray,x) => {
-//    console.log( [{  "id": x.id, "name" : x.name }, {"city" : x.address.city} , {"company" : x.company}]);
+let transF=userDetailsArray.reduce((transForm,x) => {
+    transForm=[{  "id": x.id, "name" : x.name }, {"city" : x.address.city} , {"company" : x.company}];
 
- 
+ return transForm;
  },0)
+ console.log(transF)
