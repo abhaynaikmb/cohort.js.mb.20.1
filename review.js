@@ -42,7 +42,7 @@ for(let [key,value] of Object.entries(Cities))
 
 sortedCities.push({name: name,population: value.populations,area :value.area});
 name='';
-
+console.log(sortedCities )
 }
 
 sortedCities= sortedCities.sort((cityA,cityB)=>{
@@ -56,7 +56,7 @@ sortedCities= sortedCities.sort((cityA,cityB)=>{
  }
   return cityAreaA-cityAreaB;
 })
-console.log(sortedCities)
+//console.log(sortedCities)
 
 
 

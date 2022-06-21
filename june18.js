@@ -37,14 +37,20 @@ const userDetailsArray = [
 //             neighbour: 'Hasty',
 //             city: 'Florida'
 // }]
-
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 let adressArr=userDetailsArray.reduce((adressArray,x) => {
    adressArray.push(x.address);
  return adressArray;
  },[])
 console.log(adressArr)
 ////////////////////////////////////////////////////////
-
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 
 
 
@@ -67,7 +73,7 @@ console.log(adressArr)
 // }
 
 
-
+//////////////////////////////////////////////////////
 
 
  let idAdress =userDetailsArray.reduce((idAdressArray,x) => {
@@ -107,6 +113,11 @@ console.log(idAdress)
 //         "company": "Fleetmix"
 //     }
 // }
+
+
+//////////////////////////////////////////////////////
+
+
 let idNameABoutAdress=userDetailsArray.reduce((idNAA,x) => {
  idNAA[x.id]={ "about" : x.about, "name" : x.name, "adress" :x.address,"company":x.company};
 return idNAA
@@ -126,6 +137,10 @@ console.log(idNameABoutAdress)
 //       }
 // }
 
+
+//////////////////////////////////////////////////////
+
+
 let filterND=userDetailsArray.reduce((nortDakota,x) => {
    if(x.address.city=='North Dakota') 
      { 
@@ -134,6 +149,8 @@ let filterND=userDetailsArray.reduce((nortDakota,x) => {
 return nortDakota;
 },{})
 console.log(filterND);
+
+
 ////////////////////////////////////////////////////////
 
 
@@ -141,6 +158,11 @@ console.log(filterND);
  // Q5. Filter out the person who lives in city "North Dakota" and transform the result to the following structure. 
 // Response: 
 // [{id: 600dc3b5d617e547a0e74cb9, name: Mitchell Fitzgerald"}, "North Dakota", "Scenty"]
+
+
+//////////////////////////////////////////////////////
+
+
 let nD=userDetailsArray.reduce((nDF,x) => {
   if(x.address.city=='North Dakota'){ 
  nDF=[{  "id": x.id, "name" : x.name }, x.address.city , x.company];
@@ -160,6 +182,10 @@ let nD=userDetailsArray.reduce((nDF,x) => {
 // Response: 
 // [{id: 600dc3b5d617e547a0e74cb9, name: Mitchell Fitzgerald"}, { city: "North Dakota" }, { company: "Scenty" }]
 
+
+//////////////////////////////////////////////////////
+
+
 let nd6=userDetailsArray.reduce((nDS,x) => {
     if(x.address.city=='North Dakota'){ 
    nDS = [{  "id": x.id, "name" : x.name }, {"city" : x.address.city} , {"company" : x.company}];}
@@ -178,9 +204,16 @@ return nDS;
 //     [{id: 600dc3b5d617e547a0e74cb9, name: Mitchell Fitzgerald"}, { city: "North Dakota" }, { company: "Scenty" }],
 //     [{id: 600dc3b5c4e60ba2ebf06569, name: Howell Faulkner"}, { city: "Florida" }, { company: "Fleetmix" }]
 // ]
+
+
+//////////////////////////////////////////////////////
+
+
 let transF=userDetailsArray.reduce((transForm,x) => {
     transForm=[{  "id": x.id, "name" : x.name }, {"city" : x.address.city} , {"company" : x.company}];
 
  return transForm;
  },0)
  console.log(transF)
+
+ //////////////////////////////////////////////////////
